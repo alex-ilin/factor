@@ -32,6 +32,8 @@ kernel math namespaces sequences system tools.test vocabs.loader ;
 [ "foo/bar/./" parent-directory ] must-fail
 [ "foo/bar/baz/.." parent-directory ] must-fail
 [ "foo/bar/baz/../" parent-directory ] must-fail
+[ "\\" parent-directory ] [ no-parent-directory? ] must-fail-with
+[ "/" parent-directory ] [ no-parent-directory? ] must-fail-with
 
 [ "." parent-directory ] must-fail
 [ "./" parent-directory ] must-fail

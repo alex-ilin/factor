@@ -29,7 +29,7 @@ M: object root-directory?
 ERROR: no-parent-directory path ;
 
 : parent-directory ( path -- parent )
-    dup root-directory? [
+    dup root-directory? [ no-parent-directory ] [
         trim-tail-separators
         dup last-path-separator [
             1 + cut
@@ -39,7 +39,7 @@ ERROR: no-parent-directory path ;
         { "" "." ".." } member? [
             no-parent-directory
         ] when
-    ] unless ;
+    ] if ;
 
 <PRIVATE
 
