@@ -1,6 +1,6 @@
 ! Copyright (C) 2009, 2010 Slava Pestov.
 ! See https://factorcode.org/license.txt for BSD license.
-USING: io kernel make math math.order sequences splitting ;
+USING: ascii io kernel make math math.order sequences splitting ;
 IN: strings.tables
 
 SYMBOL: cell-format
@@ -14,10 +14,14 @@ M: f cell-length length ;
 : format-row ( seq -- seq )
     dup longest length '[ _ "" pad-tail ] map! ;
 
+: pad-column ( str n -- str' )
+    CHAR: \s pick ?first [ digit? ] [ f ] if*
+    [ pad-head ] [ pad-tail ] if ;
+
 : format-column ( seq -- seq )
     dup [ cell-length ] maximum-by cell-length '[
          _ over cell-length [-]
-         [ CHAR: \s <repetition> append ] unless-zero
+         [ pad-column ] unless-zero
      ] map! ;
 
 : format-cells ( seq -- seq )
