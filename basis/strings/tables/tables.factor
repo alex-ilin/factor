@@ -1,6 +1,6 @@
 ! Copyright (C) 2009, 2010 Slava Pestov.
 ! See https://factorcode.org/license.txt for BSD license.
-USING: io kernel make math sequences splitting ;
+USING: ascii io kernel make math sequences splitting ;
 IN: strings.tables
 
 <PRIVATE
@@ -8,8 +8,12 @@ IN: strings.tables
 : format-row ( seq -- seq )
     dup longest length '[ _ "" pad-tail ] map! ;
 
+: pad-column ( str n -- str' )
+    CHAR: \s pick ?first [ digit? ] [ f ] if*
+    [ pad-head ] [ pad-tail ] if ;
+
 : format-column ( seq -- seq )
-    dup longest length '[ _ CHAR: \s pad-tail ] map! ;
+    dup longest length '[ _ pad-column ] map! ;
 
 : format-cells ( seq -- seq )
     [ [ split-lines ] map format-row flip ] map concat flip
