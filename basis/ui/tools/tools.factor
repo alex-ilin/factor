@@ -17,9 +17,9 @@ IN: ui.tools
 
 tool "tool-switching" f {
     { T{ key-down f ${ os macosx? M+ A+ ? } "l" } show-listener }
-    { T{ key-down f ${ os macosx? M+ A+ ? } "L" } listener-window }
+    { T{ key-down f ${ os macosx? M+ A+ ? S+ } "l" } listener-window }
     { T{ key-down f ${ os macosx? M+ A+ ? } "b" } show-browser }
-    { T{ key-down f ${ os macosx? M+ A+ ? } "B" } browser-window }
+    { T{ key-down f ${ os macosx? M+ A+ ? S+ } "b" } browser-window }
 } define-command-map
 
 tool "common" f {

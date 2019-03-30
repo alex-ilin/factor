@@ -457,7 +457,7 @@ listener-gadget "toolbar" f {
     { f restart-listener }
     { T{ key-down f ${ os macosx? M+ A+ ? } "u" } com-auto-use }
     { T{ key-down f ${ os macosx? M+ A+ ? } "k" } clear-output }
-    { T{ key-down f ${ os macosx? M+ A+ ? } "K" } clear-stack }
+    { T{ key-down f ${ os macosx? M+ A+ ? S+ } "k" } clear-stack }
     { T{ key-down f f "F1" } com-help }
 } define-command-map
 
