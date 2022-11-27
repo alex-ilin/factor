@@ -3,6 +3,8 @@
 *.RES
 *.a
 *.bak
+*.dat
+*.db
 *.dll
 *.dylib
 *.exe
@@ -33,8 +35,14 @@ Factor.app/Contents/MacOS/factor
 Factor.app/Contents/_CodeSignature
 a.out
 checksums.txt
+descript.ion
 factor.com
 factor.image.fresh
+findus-harvest
+findus*.db
+findus.scan.worker
+findus.wipe
+spinlog*
 xcuserdata
 bin
 git-id
