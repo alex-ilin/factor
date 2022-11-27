@@ -388,6 +388,7 @@ SYMBOL: upper-surrogate-wm-char
 
 : cleanup-window ( handle -- )
     dup title>> [ free ] when*
+    f f wglMakeCurrent win32-error=0/f
     dup hRC>> wglDeleteContext win32-error=0/f
     dup hWnd>> swap hDC>> ReleaseDC win32-error=0/f ;
 
