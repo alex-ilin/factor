@@ -1,1 +1,1 @@
-cmd /k "C:\Programs\Dev\VisualStudio\2019\Common7\Tools\VsDevCmd.bat" -arch=x64
+cmd /k "C:\Programs\Dev\VS\2022\Community\Common7\Tools\VsDevCmd.bat"
