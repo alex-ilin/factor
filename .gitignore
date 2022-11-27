@@ -17,6 +17,7 @@ boot.*.image.*
 *.res
 *.s
 *.so
+*.user
 *~
 .#*
 .*.swm
@@ -29,6 +30,7 @@ boot.*.image.*
 /factor
 /logs
 /work
+/x64
 Factor.app/Contents/MacOS/factor
 Factor.app/Contents/_CodeSignature
 a.out
