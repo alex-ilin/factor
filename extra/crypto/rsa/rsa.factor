@@ -36,6 +36,11 @@ PRIVATE>
     public-key over mod-inv +
     public-key <rsa> ;
 
+! TODO: message must not share factors with crypto pieces (look up which exactly)
+! TODO: message must be relatively prime to N, which is a product of two primes
+! TODO: message must not be too large, it should be < N
+! TODO: message must not be too small: m^public-key must be > N
+
 : rsa-encrypt ( message rsa -- encrypted )
     [ public-key>> ] [ modulus>> ] bi ^mod ;
 
