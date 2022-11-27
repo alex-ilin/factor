@@ -15,6 +15,7 @@
 *.res
 *.s
 *.so
+*.user
 *~
 .#*
 .*.swm
@@ -27,6 +28,7 @@
 /factor
 /logs
 /work
+/x64
 Factor.app/Contents/MacOS/factor
 Factor.app/Contents/_CodeSignature
 a.out
