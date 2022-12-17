@@ -229,6 +229,16 @@ or add the following line to your configuration file
 
 Then subsequent fetches will automatically update any replace objects.
 
+## Useful Code Snippets
+
+### Find all methods of a `HOOK:`
+
+For example, here's how to find all (currently loaded) words hooked on the `ui-backend` variable:
+```
+all-words [ hook-generic? ] filter
+[ "combination" word-prop var>> ui-backend = ] filter
+```
+
 ## Community
 
 Factor developers are quite active in [the Factor Discord server](https://discord.gg/QxJYZx3QDf).
