@@ -1,8 +1,10 @@
 ! Copyright (C) 2023 Alexander Ilin.
 ! See https://factorcode.org/license.txt for BSD license.
 USING:
-    arrays kernel make math namespaces prettyprint.config sequences
-    sorting splitting.monotonic strings
+    arrays kernel make math namespaces
+    prettyprint.backend prettyprint.config prettyprint.sections
+    prettyprint.stylesheet
+    sequences sorting splitting.monotonic strings vocabs
 ;
 IN: format-using
 
@@ -62,3 +64,27 @@ IN: format-using
         sort dup oneliner-length too-long? [ group-subsystems "\n" ] [ " " ] if
         [ { "USING:" } { ";" } surround ] dip join
     ] if ;
+
+: pprint-vocab ( vocab -- )
+    [ vocab-name ] [ lookup-vocab vocab-style ] bi styled-text ;
+
+: pprint-; ( -- ) \ ; pprint-word ;
+
+: sort-vocabs ( seq -- seq' ) [ vocab-name ] sort-by ;
+
+: group-vocab-subsystems ( seq -- seq' )
+    [ [ vocab-name subsystem ] same? ] monotonic-split
+    [ [ length 1 = ] same? ] monotonic-split [ concat ] map ;
+
+: (ppformat-using) ( vocabs -- )
+    dup length 1 = [ \ USE: pprint-word first pprint-vocab ] [
+        sort-vocabs group-vocab-subsystems
+        <colon
+            \ USING: pprint-word
+            [ <flow [ pprint-vocab ] each block> ] each
+        block>
+        pprint-;
+    ] if ;
+
+: ppformat-using ( vocabs -- )
+    [ (ppformat-using) ] with-pprint ;
