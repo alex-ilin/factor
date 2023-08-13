@@ -21,9 +21,11 @@ IN: vocabs.prettyprint
 : pprint-using ( seq -- )
     "syntax" lookup-vocab '[ _ = ] reject
     sort-vocabs [
-        \ USING: pprint-word
-        [ pprint-vocab ] each
-        pprint-;
+        <colon
+            \ USING: pprint-word
+            <block [ pprint-vocab ] each block>
+            pprint-;
+        block>
     ] with-pprint ;
 
 GENERIC: pprint-qualified ( qualified -- )
