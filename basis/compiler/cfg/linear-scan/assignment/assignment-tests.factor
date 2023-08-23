@@ -8,7 +8,7 @@ namespaces sequences sorting tools.test ;
 IN: compiler.cfg.linear-scan.assignment.tests
 
 : cherry-pick ( seq indices -- seq' )
-    [ swap nth ] with map  ;
+    [ idx ] with map ;
 
 : (setup-vreg-spills) ( vreg-defs -- reps leaders spill-slots )
     [ [ 2 head ] map ]

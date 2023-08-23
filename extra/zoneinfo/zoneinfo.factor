@@ -96,7 +96,7 @@ TUPLE: raw-leap year month day hms corr r/s ;
         [ second ]
         [ third ]
         [ fourth ]
-        [ 4 swap nth ]
+        [ 4 idx ]
         [ 5 tail harvest ]
     } cleave raw-zone boa ;
 
@@ -104,7 +104,7 @@ TUPLE: raw-leap year month day hms corr r/s ;
     [ name>> ] dip {
         [ first ]
         [ second ]
-        [ 2 swap nth ]
+        [ 2 idx ]
         [ 3 tail harvest ]
     } cleave raw-zone boa ;
 

@@ -92,7 +92,7 @@ HINTS: (nfkd) string ;
 ! Normalization -- Composition
 
 : initial-medial? ( str i -- ? )
-    { [ swap nth initial? ] [ 1 + swap ?nth medial? ] } 2&& ;
+    { [ idx initial? ] [ 1 + swap ?nth medial? ] } 2&& ;
 
 : --final? ( str i -- ? )
     2 + swap ?nth final? ;
@@ -108,7 +108,7 @@ HINTS: (nfkd) string ;
 : compose-jamo ( str i -- str i )
     2dup initial-medial? [
         2dup --final? [ imf% ] [ im% ] if
-    ] [ 2dup swap nth , 1 + ] if ;
+    ] [ 2dup idx , 1 + ] if ;
 
 : pass-combining ( str -- str i )
     dup [ non-starter? not ] find drop

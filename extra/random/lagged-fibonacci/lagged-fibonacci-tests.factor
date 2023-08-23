@@ -8,7 +8,7 @@ IN: random.lagged-fibonacci.tests
 { t } [
     3 <lagged-fibonacci> [
         1000 [ random-float ] double-array{ } replicate-as
-        999 swap nth 0.860072135925293 -.01 ~
+        999 idx 0.860072135925293 -.01 ~
     ] with-random
 ] unit-test
 

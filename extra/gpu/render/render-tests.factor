@@ -43,10 +43,10 @@ UNIFORM-TUPLE: array-of-struct-containing-array-of-texture
     [ argyle>> ]
     [ tweed>> ]
     [ plaids>> {
-        [ 0 swap nth ]
-        [ 1 swap nth ]
-        [ 2 swap nth ]
-        [ 3 swap nth ]
+        [ 0 idx ]
+        [ 1 idx ]
+        [ 2 idx ]
+        [ 3 idx ]
     } ]
 } } [ array-of-textures f uniform-texture-accessors ] unit-test
 
@@ -59,17 +59,17 @@ UNIFORM-TUPLE: array-of-struct-containing-array-of-texture
 
 { {
     [ threads>> {
-        [ 0 swap nth {
+        [ 0 idx {
             [ argyle>> ]
             [ tweed>> ]
             [ paisley>> ]
         } ]
-        [ 1 swap nth {
+        [ 1 idx {
             [ argyle>> ]
             [ tweed>> ]
             [ paisley>> ]
         } ]
-        [ 2 swap nth {
+        [ 2 idx {
             [ argyle>> ]
             [ tweed>> ]
             [ paisley>> ]
@@ -79,24 +79,24 @@ UNIFORM-TUPLE: array-of-struct-containing-array-of-texture
 
 { {
     [ threads>> {
-        [ 0 swap nth {
+        [ 0 idx {
             [ argyle>> ]
             [ tweed>> ]
             [ plaids>> {
-                [ 0 swap nth ]
-                [ 1 swap nth ]
-                [ 2 swap nth ]
-                [ 3 swap nth ]
+                [ 0 idx ]
+                [ 1 idx ]
+                [ 2 idx ]
+                [ 3 idx ]
             } ]
         } ]
-        [ 1 swap nth {
+        [ 1 idx {
             [ argyle>> ]
             [ tweed>> ]
             [ plaids>> {
-                [ 0 swap nth ]
-                [ 1 swap nth ]
-                [ 2 swap nth ]
-                [ 3 swap nth ]
+                [ 0 idx ]
+                [ 1 idx ]
+                [ 2 idx ]
+                [ 3 idx ]
             } ]
         } ]
     } ]
@@ -107,10 +107,10 @@ UNIFORM-TUPLE: array-of-struct-containing-array-of-texture
         [ argyle>> 0 (bind-texture-unit) ]
         [ tweed>> 1 (bind-texture-unit) ]
         [ plaids>> {
-            [ 0 swap nth 2 (bind-texture-unit) ]
-            [ 1 swap nth 3 (bind-texture-unit) ]
-            [ 2 swap nth 4 (bind-texture-unit) ]
-            [ 3 swap nth 5 (bind-texture-unit) ]
+            [ 0 idx 2 (bind-texture-unit) ]
+            [ 1 idx 3 (bind-texture-unit) ]
+            [ 2 idx 4 (bind-texture-unit) ]
+            [ 3 idx 5 (bind-texture-unit) ]
         } cleave ]
     } cleave
 ] } [ array-of-textures [bind-uniform-textures] ] unit-test

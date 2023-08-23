@@ -168,7 +168,7 @@ ERROR: bad-filter n ;
     2 clump [
         n swap first2
         [ ]
-        [ n 1 - swap nth ]
+        [ n 1 - idx ]
         [ [ 0 n 1 - ] dip set-nth ] tri
         png-unfilter-line
     ] map B{ } concat-as ;

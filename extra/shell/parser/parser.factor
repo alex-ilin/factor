@@ -17,10 +17,10 @@ TUPLE: factor-expr        expr ;
 
 : ast>pipeline-expr ( ast -- obj )
     pipeline-expr new
-        over [ first ] [ fourth [ first ] map ] [ 4 swap nth ] tri
+        over [ first ] [ fourth [ first ] map ] [ 4 idx ] tri
         suffix swap prefix >>commands
         over second >>stdin
-        over 5 swap nth >>stdout
+        over 5 idx >>stdout
         6 rot nth >>background ;
 
 : ast>single-quoted-expr ( ast -- obj )

@@ -212,8 +212,8 @@ gravity off
 
 ! Send the half of the snake in a random direction
 
-nodes> 10 [ swap nth ]      with map
-nodes> 10 [ 19 + swap nth ] with map append
+nodes> 10 [ idx ]      with map
+nodes> 10 [ 19 + idx ] with map append
 100 random -50 +   100 random 100 + { -1 1 } random *  2array
 [ swap set-node-vel ] curry
 each ;

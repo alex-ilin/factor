@@ -43,7 +43,7 @@ MACRO: (casep) ( assoc -- quot ) (casep>quot) ;
 
 : (conditional-probabilities) ( seq i -- p )
     [ dup 0 > [ head [ 1 swap - ] [ * ] map-reduce ] [ 2drop 1 ] if ]
-    [ swap nth ] 2bi * ;
+    [ idx ] 2bi * ;
 
 : conditional-probabilities ( seq -- seq' )
     dup length <iota> [ (conditional-probabilities) ] with map ;

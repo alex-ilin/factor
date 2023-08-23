@@ -67,7 +67,7 @@ M: gc-map-insn visit-insn ( state insn -- state' )
 ERROR: vacant-peek insn ;
 
 : underflowable-peek? ( state peek -- ? )
-    2dup loc>> >loc< swap [ 0 1 ? swap nth ] dip classify-read
+    2dup loc>> >loc< swap [ 0 1 ? idx ] dip classify-read
     dup 2 = [ drop vacant-peek ] [ 2nip 1 = ] if ;
 
 M: ##peek visit-insn ( state insn -- state )

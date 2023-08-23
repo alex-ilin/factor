@@ -83,7 +83,7 @@ TUPLE: tower model bbox position ;
 : <tower> ( -- obj )
     "turret.obj" resource load-model &unload-model
     "turret_diffuse.png" resource load-texture &unload-texture
-    over materials>> first maps>> MATERIAL_MAP_DIFFUSE enum>number swap nth texture<<
+    over materials>> first maps>> MATERIAL_MAP_DIFFUSE enum>number idx texture<<
     dup meshes>> first get-mesh-bounding-box
     0 0 0 <Vector3> tower boa ;
 

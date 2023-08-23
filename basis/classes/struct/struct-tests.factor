@@ -279,7 +279,7 @@ STRUCT: struct-test-array-slots
     { y ushort[6] initial: ushort-array{ 2 3 5 7 11 13 } }
     { z int } ;
 
-{ 11 } [ struct-test-array-slots <struct> y>> 4 swap nth ] unit-test
+{ 11 } [ struct-test-array-slots <struct> y>> 4 idx ] unit-test
 
 { t } [
     struct-test-array-slots <struct>

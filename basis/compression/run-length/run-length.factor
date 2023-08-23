@@ -23,7 +23,7 @@ IN: compression.run-length
             sp next dup 0x03 0xff between? [
                 nip [ sp ] dip dup odd?
                 [ 1 + take-n but-last ] [ take-n ] if
-                [ j matrix i swap nth copy ] [ length j + j! ] bi
+                [ j matrix i idx copy ] [ length j + j! ] bi
             ] [
                 nip {
                     { 0 [ i 1 + i!  0 j! ] }
@@ -33,7 +33,7 @@ IN: compression.run-length
             ] if
         ] [
             [ sp next 8hi-lo 2array <repetition> concat ] [ head ] bi
-            [ j matrix i swap nth copy ] [ length j + j! ] bi
+            [ j matrix i idx copy ] [ length j + j! ] bi
         ] if
 
         ! j stride >= [ i 1 + i!  0 j! ] when
@@ -55,7 +55,7 @@ IN: compression.run-length
             sp next dup 0x03 0xff between? [
                 nip [ sp ] dip dup odd?
                 [ 1 + take-n but-last ] [ take-n ] if
-                [ j matrix i swap nth copy ] [ length j + j! ] bi
+                [ j matrix i idx copy ] [ length j + j! ] bi
             ] [
                 nip {
                     { 0 [ i 1 + i!  0 j! ] }
@@ -64,7 +64,7 @@ IN: compression.run-length
                 } case
             ] if
         ] [
-            sp next <array> [ j matrix i swap nth copy ] [ length j + j! ] bi
+            sp next <array> [ j matrix i idx copy ] [ length j + j! ] bi
         ] if
 
         ! j stride >= [ i 1 + i!  0 j! ] when

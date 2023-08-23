@@ -10,6 +10,6 @@ IN: lint.tests
 
 ! [ { { lint2 { [ dup -rot ] } } } ] [ \ lint2 lint-word ] unit-test
 
-: lint3 ( seq -- seq ) [ 0 swap nth 1 + ] map ;
+: lint3 ( seq -- seq ) [ 0 idx 1 + ] map ;
 
-{ { { lint3 { [ 0 swap nth ] } } } } [ \ lint3 lint-word ] unit-test
+{ { { lint3 { [ 0 idx ] } } } } [ \ lint3 lint-word ] unit-test

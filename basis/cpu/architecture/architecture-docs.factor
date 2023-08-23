@@ -17,7 +17,7 @@ USING: cpu.architecture make ;
 
 STRING: ex-%box-alien
 USING: compiler.codegen compiler.codegen.relocation cpu.architecture make ;
-[ RAX RBX RCX %box-alien ] with-fixup 4 swap nth disassemble
+[ RAX RBX RCX %box-alien ] with-fixup 4 idx disassemble
 000000e9fcc720a0: 48b80100000000000000  mov eax, 0x1
 000000e9fcc720aa: 4885db                test rbx, rbx
 000000e9fcc720ad: 0f8400000000          jz dword 0xe9fcc720b3

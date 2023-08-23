@@ -138,7 +138,7 @@ M: hash-set set-like
     drop dup hash-set? [ ?members >hash-set ] unless ; inline
 
 : intern ( obj hash-set -- obj' )
-    2dup key@ [ swap nth 2nip ] [ 2drop [ adjoin ] keepd ] if ;
+    2dup key@ [ idx 2nip ] [ 2drop [ adjoin ] keepd ] if ;
 
 INSTANCE: hash-set set
 

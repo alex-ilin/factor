@@ -420,7 +420,7 @@ DEFER: eee'
 { 1 1 } [ [            ] map  ] must-infer-as
 { 1 1 } [ [ reverse    ] map  ] must-infer-as
 { 2 2 } [ [ append dup ] map  ] must-infer-as
-{ 2 2 } [ [ swap nth suffix dup ] map-index ] must-infer-as
+{ 2 2 } [ [ idx suffix dup ] map-index ] must-infer-as
 
 { 4 1 } [ [ 2drop ] [ 2nip    ] if ] must-infer-as
 { 3 3 } [ [ dup   ] [ over    ] if ] must-infer-as

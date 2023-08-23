@@ -49,12 +49,12 @@ PRIVATE>
 MEMO: all-stations ( -- seq )
     stations-data [
         {
-            [ 0 swap nth ]
-            [ 3 swap nth ]
-            [ 4 swap nth ]
-            [ 5 swap nth ]
-            [ 7 swap nth string>latitude ]
-            [ 8 swap nth string>longitude ]
+            [ 0 idx ]
+            [ 3 idx ]
+            [ 4 idx ]
+            [ 5 idx ]
+            [ 7 idx string>latitude ]
+            [ 8 idx string>longitude ]
         } cleave <station>
     ] map ;
 

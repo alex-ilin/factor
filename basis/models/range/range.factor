@@ -15,7 +15,7 @@ TUPLE: range < product ;
 : range-page ( range -- model ) dependencies>> second ;
 : range-min ( range -- model ) dependencies>> third ;
 : range-max ( range -- model ) dependencies>> fourth ;
-: range-step ( range -- model ) dependencies>> 4 swap nth ;
+: range-step ( range -- model ) dependencies>> 4 idx ;
 
 : step-value ( value range -- value' )
     range-step value>> floor-to ;

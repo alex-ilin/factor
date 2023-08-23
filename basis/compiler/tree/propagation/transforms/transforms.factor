@@ -224,7 +224,7 @@ ERROR: bad-partial-eval quot word ;
 
 ! Shuffling
 : nths-quot ( indices -- quot )
-    [ [ '[ _ swap nth ] ] map ] [ length ] bi
+    [ [ '[ _ idx ] ] map ] [ length ] bi
     '[ _ cleave _ narray ] ;
 
 \ shuffle [

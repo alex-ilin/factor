@@ -472,7 +472,7 @@ UNION: Elf32/64_Phdr Elf32_Phdr Elf64_Phdr ;
 UNION: Elf32/64_Phdr-array Elf32_Phdr-array Elf64_Phdr-array ;
 
 TYPED: 64-bit? ( elf: Elf32/64_Ehdr -- ? )
-    e_ident>> EI_CLASS swap nth ELFCLASS64 = ;
+    e_ident>> EI_CLASS idx ELFCLASS64 = ;
 
 TYPED: elf-header ( c-ptr -- elf: Elf32/64_Ehdr )
     dup Elf64_Ehdr memory>struct dup 64-bit?

@@ -568,7 +568,7 @@ TUPLE: inconsistent-vector-test bool branch ;
 ! Test element access -- it should box bignums for int-4 on x86
 : test-accesses ( seq -- failures )
     [ length <iota> dup [ >bignum ] map append ] keep
-    '[ [ _ 1quotation ] dip '[ _ swap nth ] ] [ = ] check-optimizer ; inline
+    '[ [ _ 1quotation ] dip '[ _ idx ] ] [ = ] check-optimizer ; inline
 
 { { } } [ float-4{ 1.0 2.0 3.0 4.0 } test-accesses ] unit-test
 { { } } [ int-4{ 0x7fffffff 3 4 -8 } test-accesses ] unit-test

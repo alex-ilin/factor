@@ -45,7 +45,7 @@ IN: project-euler.186
     55 [1..b] [ (generator) ] map <circular> ;
 
 : next ( lag -- n )
-    [ [ first dup ] [ 31 swap nth ] bi + 1000000 rem ] keep circular-push ;
+    [ [ first dup ] [ 31 idx ] bi + 1000000 rem ] keep circular-push ;
 
 : (euler186) ( generator counter unionfind -- counter )
     524287 over equiv-set-size 990000 < [

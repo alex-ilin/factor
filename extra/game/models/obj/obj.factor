@@ -105,9 +105,9 @@ VERTEX-FORMAT: obj-vertex-format
 : quad>aos ( x -- y z )
     [ 3 head [ triangle>aos 1array ] map ]
     [
-        [ 2 swap nth ]
-        [ 3 swap nth ]
-        [ 0 swap nth ] tri 3array
+        [ 2 idx ]
+        [ 3 idx ]
+        [ 0 idx ] tri 3array
         [ triangle>aos 1array ] map
     ] bi ;
 

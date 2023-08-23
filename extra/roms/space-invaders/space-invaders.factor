@@ -57,7 +57,7 @@ CONSTANT: SOUND-UFO-HIT      8
         [ 9 gen-sources swap sounds<< ]
         [ SOUND-SHOT "vocab:roms/space-invaders/resources/Shot.wav" init-sound ]
         [ SOUND-UFO "vocab:roms/space-invaders/resources/Ufo.wav" init-sound ]
-        [ sounds>> SOUND-UFO swap nth AL_LOOPING AL_TRUE set-source-param ]
+        [ sounds>> SOUND-UFO idx AL_LOOPING AL_TRUE set-source-param ]
         [ SOUND-BASE-HIT "vocab:roms/space-invaders/resources/BaseHit.wav" init-sound ]
         [ SOUND-INVADER-HIT "vocab:roms/space-invaders/resources/InvHit.Wav" init-sound ]
         [ SOUND-WALK1 "vocab:roms/space-invaders/resources/Walk1.wav" init-sound ]

@@ -61,7 +61,7 @@ CONSTANT: default-segment-radius 1
     [ '[ _ clamp-length ] bi@ ] keep <slice> ;
 
 : get-segment ( segments n -- segment )
-    over clamp-length swap nth ;
+    over clamp-length idx ;
 
 : next-segment ( segments current-segment -- segment )
     number>> 1 + get-segment ;

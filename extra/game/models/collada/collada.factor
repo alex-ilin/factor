@@ -44,9 +44,9 @@ GENERIC: >y-up-axis! ( seq from-axis -- seq )
 M: x-up >y-up-axis!
     drop dup
     [
-        [ 0 swap nth ]
-        [ 1 swap nth neg ]
-        [ 2 swap nth ] tri
+        [ 0 idx ]
+        [ 1 idx neg ]
+        [ 2 idx ] tri
         swapd
     ] [
         [ 2 swap set-nth ]
@@ -57,9 +57,9 @@ M: y-up >y-up-axis! drop ;
 M: z-up >y-up-axis!
     drop dup
     [
-        [ 0 swap nth ]
-        [ 1 swap nth neg ]
-        [ 2 swap nth ] tri
+        [ 0 idx ]
+        [ 1 idx neg ]
+        [ 2 idx ] tri
         swap
     ] [
         [ 2 swap set-nth ]

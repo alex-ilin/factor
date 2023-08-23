@@ -15,6 +15,8 @@ GENERIC: new-resizable ( len seq -- newseq ) flushable
 GENERIC: like ( seq exemplar -- newseq ) flushable
 GENERIC: clone-like ( seq exemplar -- newseq ) flushable
 
+: idx ( seq n -- elt ) idx ; inline
+
 : lengthd ( seq obj -- n obj ) [ length ] dip ; inline
 
 : new-sequence-like ( len-exemplar type-exemplar -- newseq )
@@ -47,10 +49,10 @@ M: sequence shorten 2dup length < [ set-length ] [ 2drop ] if ; inline
 
 : delete-all ( seq -- ) 0 swap set-length ;
 
-: first ( seq -- first ) 0 swap nth ; inline
-: second ( seq -- second ) 1 swap nth ; inline
-: third ( seq -- third ) 2 swap nth ; inline
-: fourth ( seq -- fourth ) 3 swap nth ; inline
+: first ( seq -- first ) 0 idx ; inline
+: second ( seq -- second ) 1 idx ; inline
+: third ( seq -- third ) 2 idx ; inline
+: fourth ( seq -- fourth ) 3 idx ; inline
 
 : set-first ( first seq -- ) 0 swap set-nth ; inline
 : set-second ( second seq -- ) 1 swap set-nth ; inline

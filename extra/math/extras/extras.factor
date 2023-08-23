@@ -200,7 +200,7 @@ PRIVATE>
     dup sum '[ _ / dup ^ ] map-product ;
 
 : weighted-random ( histogram -- obj )
-    unzip cum-sum [ last >float random ] keep bisect-left swap nth ;
+    unzip cum-sum [ last >float random ] keep bisect-left idx ;
 
 : weighted-randoms ( length histogram -- seq )
     unzip cum-sum swap

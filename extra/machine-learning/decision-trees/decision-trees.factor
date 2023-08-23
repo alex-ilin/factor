@@ -14,7 +14,7 @@ IN: machine-learning.decision-trees
 
 : subsets-weighted-entropy ( data-target idx -- seq )
     ! Group the data according to the given index.
-    '[ first _ swap nth ] group-by-sorted
+    '[ first _ idx ] group-by-sorted
     ! Then unpack the partitioned groups of targets
     '[ [ second ] map ] assoc-map values
     ! Finally, calculate the weighted entropy for each group

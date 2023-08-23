@@ -10,7 +10,7 @@ IN: unicode.breaks
 <<
 
 :: load-interval-file-for ( filename n key -- table )
-    filename load-data-file [ n swap nth key = ] filter
+    filename load-data-file [ n idx key = ] filter
     intern-values expand-ranges ;
 
 >>

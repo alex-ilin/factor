@@ -392,10 +392,10 @@ H{
 
 { } [ 0 get block>cfg dup cfg set compute-live-sets ] unit-test
 
-{ V{ { 1 0 } } } [ 1 get instructions>> 2 swap nth gc-map>> derived-roots>> ] unit-test
+{ V{ { 1 0 } } } [ 1 get instructions>> 2 idx gc-map>> derived-roots>> ] unit-test
 
-{ { 0 } } [ 1 get instructions>> 2 swap nth gc-map>> gc-roots>> ] unit-test
+{ { 0 } } [ 1 get instructions>> 2 idx gc-map>> gc-roots>> ] unit-test
 
-{ V{ { 1 0 } } } [ 1 get instructions>> 4 swap nth gc-map>> derived-roots>> ] unit-test
+{ V{ { 1 0 } } } [ 1 get instructions>> 4 idx gc-map>> derived-roots>> ] unit-test
 
-{ { 0 } } [ 1 get instructions>> 4 swap nth gc-map>> gc-roots>> ] unit-test
+{ { 0 } } [ 1 get instructions>> 4 idx gc-map>> gc-roots>> ] unit-test

@@ -36,7 +36,7 @@ ARTICLE: "manipulation" "Manipulating Tensors"
 { $example
     "USING: prettyprint sequences tensors ;"
     "t{ { 0.0 1.0 2.0 } { 3.0 4.0 5.0 } }"
-    "[ { 1 1 } swap nth ] [ 4 swap nth ] bi = ."
+    "[ { 1 1 } idx ] [ 4 idx ] bi = ."
     "t"
 }
 "If the array being used to index into the tensor has the wrong number "

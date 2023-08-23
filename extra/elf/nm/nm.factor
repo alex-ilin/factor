@@ -11,7 +11,7 @@ IN: elf.nm
             { SHN_UNDEF [ drop "undefined" ] }
             { SHN_ABS [ drop "absolute" ] }
             { SHN_COMMON [ drop "common" ] }
-            [ swap nth name>> ]
+            [ idx name>> ]
         } case "%-16s " printf
     ]
     [ name>> "%s\n" printf ] tri ;

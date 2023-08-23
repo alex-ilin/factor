@@ -41,39 +41,39 @@ name target ;
     [
         11 f pad-tail
         <remote-file> swap {
-            [ 0 swap nth parse-permissions ]
-            [ 1 swap nth string>number >>links ]
-            [ 2 swap nth >>owner ]
-            [ 3 swap nth >>group ]
-            [ 4 swap nth string>number >>size ]
-            [ 5 swap nth >>month ]
-            [ 6 swap nth >>day ]
-            [ 7 swap nth >>time ]
-            [ 8 swap nth >>name ]
-            [ 10 swap nth >>target ]
+            [ 0 idx parse-permissions ]
+            [ 1 idx string>number >>links ]
+            [ 2 idx >>owner ]
+            [ 3 idx >>group ]
+            [ 4 idx string>number >>size ]
+            [ 5 idx >>month ]
+            [ 6 idx >>day ]
+            [ 7 idx >>time ]
+            [ 8 idx >>name ]
+            [ 10 idx >>target ]
         } cleave
     ] map ;
 
 : parse-list-8 ( lines -- seq )
     [
         <remote-file> swap {
-            [ 0 swap nth parse-permissions ]
-            [ 1 swap nth string>number >>links ]
-            [ 2 swap nth >>owner ]
-            [ 3 swap nth >>size ]
-            [ 4 swap nth >>month ]
-            [ 5 swap nth >>day ]
-            [ 6 swap nth >>time ]
-            [ 7 swap nth >>name ]
+            [ 0 idx parse-permissions ]
+            [ 1 idx string>number >>links ]
+            [ 2 idx >>owner ]
+            [ 3 idx >>size ]
+            [ 4 idx >>month ]
+            [ 5 idx >>day ]
+            [ 6 idx >>time ]
+            [ 7 idx >>name ]
         } cleave
     ] map ;
 
 : parse-list-3 ( lines -- seq )
     [
         <remote-file> swap {
-            [ 0 swap nth parse-permissions ]
-            [ 1 swap nth string>number >>links ]
-            [ 2 swap nth >>name ]
+            [ 0 idx parse-permissions ]
+            [ 1 idx string>number >>links ]
+            [ 2 idx >>name ]
         } cleave
     ] map ;
 

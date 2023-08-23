@@ -38,7 +38,7 @@ IN: compiler.cfg.builder.alien.tests
     }
 } [
     <basic-block> dup set-basic-block
-    \ dummy-callback build-tree optimize-tree 3 swap nth child>>
+    \ dummy-callback build-tree optimize-tree 3 idx child>>
     [ emit-callback-body drop ] V{ } make
 ] cfg-unit-test
 

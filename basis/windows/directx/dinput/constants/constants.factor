@@ -52,7 +52,7 @@ M: array array-base-type first ;
         [ second rot [ (offsetof) ] [ (sizeof) ] 2bi ]
         [ third * + ]
         [ fourth (flags) ]
-        [ 4 swap nth (flag) ]
+        [ 4 idx (flag) ]
     } cleave
     DIOBJECTDATAFORMAT boa ;
 

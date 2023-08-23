@@ -186,7 +186,7 @@ SYMBOL: gc-events
     gc-events get compute-gc-stats gc-stats-table simple-table. ;
 
 : sum-phase-times ( events phase -- n )
-    '[ times>> _ swap nth ] map-sum nanos>string ; inline
+    '[ times>> _ idx ] map-sum nanos>string ; inline
 
 : gc-summary. ( -- )
     gc-events get {

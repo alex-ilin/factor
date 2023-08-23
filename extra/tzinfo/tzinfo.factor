@@ -91,7 +91,7 @@ C: <tzinfo> tzinfo
 : find-transition ( timestamp tzinfo -- transition )
     [ timestamp>unix-time ] [ transitions>> ] bi*
     [ [ seconds>> before? ] with find drop ]
-    [ swap [ 1 [-] swap nth ] [ last ] if* ] bi ;
+    [ swap [ 1 [-] idx ] [ last ] if* ] bi ;
 
 PRIVATE>
 

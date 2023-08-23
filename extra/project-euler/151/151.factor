@@ -50,7 +50,7 @@ SYMBOL: table
 DEFER: (euler151)
 
 : pick-sheet ( seq i -- res )
-    2dup swap nth dup zero? [
+    2dup idx dup zero? [
         3drop 0
     ] [
         [ (pick-sheet) (euler151) ] dip *

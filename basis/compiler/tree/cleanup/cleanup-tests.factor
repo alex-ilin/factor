@@ -493,19 +493,19 @@ M: float detect-float ;
 { [ ] } [
     [
         20 f <array>
-        [ 0 swap nth ] keep
-        [ 1 swap nth ] keep
-        [ 2 swap nth ] keep
-        [ 3 swap nth ] keep
-        [ 4 swap nth ] keep
-        [ 5 swap nth ] keep
-        [ 6 swap nth ] keep
-        [ 7 swap nth ] keep
-        [ 8 swap nth ] keep
-        [ 9 swap nth ] keep
-        [ 10 swap nth ] keep
-        [ 11 swap nth ] keep
-        [ 12 swap nth ] keep
+        [ 0 idx ] keep
+        [ 1 idx ] keep
+        [ 2 idx ] keep
+        [ 3 idx ] keep
+        [ 4 idx ] keep
+        [ 5 idx ] keep
+        [ 6 idx ] keep
+        [ 7 idx ] keep
+        [ 8 idx ] keep
+        [ 9 idx ] keep
+        [ 10 idx ] keep
+        [ 11 idx ] keep
+        [ 12 idx ] keep
         14 ndrop
     ] cleaned-up-tree nodes>quot
 ] unit-test

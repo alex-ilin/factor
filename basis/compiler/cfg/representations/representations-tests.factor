@@ -231,7 +231,7 @@ V{
 
 { } [ test-representations ] unit-test
 
-{ t } [ 1 get instructions>> 4 swap nth ##scalar>integer? ] unit-test
+{ t } [ 1 get instructions>> 4 idx ##scalar>integer? ] unit-test
 
 ! Test phi node behavior
 V{

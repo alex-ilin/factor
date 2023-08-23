@@ -32,15 +32,15 @@ PRIVATE>
     [ 0 set-profiling get-samples raw-profile-data set-global ]
     finally ; inline
 
-: total-sample-count ( sample -- count ) 0 swap nth ;
-: gc-sample-count ( sample -- count ) 1 swap nth ;
-: jit-sample-count ( sample -- count ) 2 swap nth ;
-: foreign-sample-count ( sample -- count ) 3 swap nth ;
-: foreign-thread-sample-count ( sample -- count ) 4 swap nth ;
+: total-sample-count ( sample -- count ) 0 idx ;
+: gc-sample-count ( sample -- count ) 1 idx ;
+: jit-sample-count ( sample -- count ) 2 idx ;
+: foreign-sample-count ( sample -- count ) 3 idx ;
+: foreign-thread-sample-count ( sample -- count ) 4 idx ;
 : sample-counts-slice ( sample -- counts ) 5 head-slice ;
 
-: sample-thread ( sample -- thread ) 5 swap nth ;
-: sample-callstack ( sample -- array ) 6 swap nth ;
+: sample-thread ( sample -- thread ) 5 idx ;
+: sample-callstack ( sample -- array ) 6 idx ;
 : unclip-callstack ( sample -- sample' callstack-top )
     clone 6 over [ unclip-last swap ] change-nth ;
 

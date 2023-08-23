@@ -143,4 +143,4 @@ TUPLE: window-gadget < track focusable-child-number ;
     fsn >>focusable-child-number
     board-gadgets [ constraint track-add ] each ;
 
-M: window-gadget focusable-child* dup children>> swap focusable-child-number>> swap nth ;
+M: window-gadget focusable-child* dup children>> swap focusable-child-number>> idx ;

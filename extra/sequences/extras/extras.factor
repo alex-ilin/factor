@@ -366,7 +366,7 @@ PRIVATE>
 
 PRIVATE>
 
-: nth-of ( seq n -- elt ) swap nth ; inline
+ALIAS: nth-of idx
 : set-nth-of ( seq n elt -- seq ) spin [ set-nth ] keep ; inline
 : ?nth-of ( seq n -- elt/f ) swap ?nth ; inline
 : ??nth ( n seq -- elt/f ? )

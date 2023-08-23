@@ -24,7 +24,7 @@ IN: ctags.etags
         0x7f ,
         second dup number>string %
         "," %
-        1 - swap nth number>string %
+        1 - idx number>string %
     ] "" make ;
 
 : etag-header ( vec1 resource -- vec2 )

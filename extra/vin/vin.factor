@@ -26,7 +26,7 @@ PRIVATE>
         [ length 17 = ]
         [ [ "ABCDEFGHJKLMNPRSTUVWXYZ0123456789" member? ] all? ]
         [
-            [ 8 swap nth ]
+            [ 8 idx ]
             [ WEIGHTS swap 0 [ TRANSLITERATION at * + ] 2reduce 11 mod ] bi
             dup 10 = [ drop CHAR: X = ] [ CHAR: 0 + = ] if
         ]

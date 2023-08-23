@@ -154,7 +154,7 @@ ALIAS: anti-flip anti-transpose
     '[ _ row ] map ; inline
 
 : col ( n matrix -- col )
-    swap '[ _ swap nth ] map ; inline
+    swap '[ _ idx ] map ; inline
 
 : cols ( seq matrix -- cols )
     '[ _ col ] map ; inline

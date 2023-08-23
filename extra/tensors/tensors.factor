@@ -397,7 +397,7 @@ syntax:M: tensor sum vec>> 0 <simd-slice>
 :: final-vstack-shape ( seq -- shape )
     ! Compute the new second-to-last dimension
     seq first dims 2 - :> vdim
-    seq [ shape>> vdim swap nth ] map-sum
+    seq [ shape>> vdim idx ] map-sum
     ! Combine it to create the new shape
     seq first shape>> clone :> new-shape
     vdim new-shape set-nth

@@ -74,9 +74,9 @@ ptr = [*&] => [[ empty? not ]]
 
 param = "," " "* type " "* => [[ third ]]
 
-params = "<" " "* type " "* param* ">" => [[ [ 4 swap nth ] [ third ] bi prefix ]]
+params = "<" " "* type " "* param* ">" => [[ [ 4 idx ] [ third ] bi prefix ]]
 
-type = name " "* params? " "* ptr? => [[ { 0 2 4 } [ swap nth ] with map first3 <c++-type> ]]
+type = name " "* params? " "* ptr? => [[ { 0 2 4 } [ idx ] with map first3 <c++-type> ]]
 ;EBNF
 
 : parse-c++-type ( str -- c++-type )

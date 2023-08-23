@@ -250,7 +250,7 @@ GENERIC: distance ( u v -- x )
 M: object distance [ - absq ] [ + ] 2map-reduce sqrt ; inline
 
 : set-axis ( u v axis -- w )
-    [ [ zero? 2over ? ] dip swap nth ] map-index 2nip ;
+    [ [ zero? 2over ? ] dip idx ] map-index 2nip ;
 
 <PRIVATE
 

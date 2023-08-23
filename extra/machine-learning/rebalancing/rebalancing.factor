@@ -20,7 +20,7 @@ MEMO: probabilities-seq ( seq -- seq' )
     '[ _ random-unit '[ _ > ] find drop ] ; inline
 
 : stratified-sample ( stratified-sequences probability-sequence -- elt )
-    probabilities-quot call swap nth random ; inline
+    probabilities-quot call idx random ; inline
 
 : stratified-samples ( stratified-sequences probability-sequence n -- elt )
     [ '[ _ _ stratified-sample ] ] dip swap replicate ;
@@ -36,7 +36,7 @@ MEMO: probabilities-seq ( seq -- seq' )
         dup collect-indices
         values '[
             _ _ _ equal-stratified-sample
-            '[ _ swap nth ] bi@ 2array
+            '[ _ idx ] bi@ 2array
         ]
     ] dip swap replicate [ keys ] [ values ] bi ;
 
@@ -45,6 +45,6 @@ MEMO: probabilities-seq ( seq -- seq' )
         [ dup collect-indices sort-keys values ] dip
         '[
             _ _ _ _ stratified-sample
-            '[ _ swap nth ] bi@ 2array
+            '[ _ idx ] bi@ 2array
         ]
     ] dip swap replicate [ keys ] [ values ] bi ;

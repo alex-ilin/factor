@@ -7,7 +7,7 @@ IN: compiler.codegen
 <<
 STRING: generate-ex
 USING: compiler.cfg.debugger io prettyprint ;
-[ "hello\n" write ] test-regs first dup cfg set generate [ . ] [ 4 swap nth disassemble ] bi
+[ "hello\n" write ] test-regs first dup cfg set generate [ . ] [ 4 idx disassemble ] bi
 ;
 
 STRING: generate-ex-answer

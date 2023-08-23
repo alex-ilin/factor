@@ -322,7 +322,7 @@ HELP: to-fixed-point
         "IN: scratchpad"
         ": flatten ( sequence -- sequence' )"
         "    \"flatten\" over index"
-        "    [ [ 1 + swap nth ] [ nip dup 2 + ] [ drop ] 2tri replace-slice ] when* ;"
+        "    [ [ 1 + idx ] [ nip dup 2 + ] [ drop ] 2tri replace-slice ] when* ;"
         ""
         "{ \"flatten\" { 1 { 2 3 } \"flatten\" { 4 5 } { 6 } } } [ flatten ] to-fixed-point ."
         "{ 1 { 2 3 } 4 5 { 6 } }"

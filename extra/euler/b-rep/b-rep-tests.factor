@@ -50,25 +50,25 @@ V{ t } clone sharpness-stack [
 
 { t } [
     valid-cube-b-rep edges>>
-    [ [  0 swap nth ] [  1 swap nth ] bi connecting-edge ]
-    [    0 swap nth ] bi eq?
+    [ [  0 idx ] [  1 idx ] bi connecting-edge ]
+    [    0 idx ] bi eq?
 ] unit-test
 
 { t } [
     valid-cube-b-rep edges>>
-    [ [  1 swap nth ] [  0 swap nth ] bi connecting-edge ]
-    [    6 swap nth ] bi eq?
+    [ [  1 idx ] [  0 idx ] bi connecting-edge ]
+    [    6 idx ] bi eq?
 ] unit-test
 
 { t } [
     valid-cube-b-rep edges>>
-    [ [  0 swap nth ] [  3 swap nth ] bi connecting-edge ]
-    [   21 swap nth ] bi eq?
+    [ [  0 idx ] [  3 idx ] bi connecting-edge ]
+    [   21 idx ] bi eq?
 ] unit-test
 
 { f } [
     valid-cube-b-rep edges>>
-    [  0 swap nth ] [  2 swap nth ] bi connecting-edge
+    [  0 idx ] [  2 idx ] bi connecting-edge
 ] unit-test
 
 { double-4{ 0 0 -1 0 } } [

@@ -3,6 +3,6 @@
 USING: circular kernel lists sequences ;
 IN: lists.circular
 
-M: circular car 0 swap nth ;
+M: circular car 0 idx ;
 
 M: circular cdr [ rotate-circular ] keep ;

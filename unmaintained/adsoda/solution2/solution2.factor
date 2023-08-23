@@ -103,7 +103,7 @@ SYMBOL: matrix
 
 : basis-vector ( row col# -- )
     [ clone ] dip
-    [ swap nth neg recip ] 2keep
+    [ idx neg recip ] 2keep
     [ 0 spin set-nth ] 2keep
     [ n*v ] dip
     matrix get set-nth ;

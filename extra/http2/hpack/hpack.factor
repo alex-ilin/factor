@@ -202,7 +202,7 @@ CONSTANT: static-table {
 ! pseudocode from the rfc (RFC 7541, section 5.1)
 : decode-integer-fragment ( block index I M -- block index+1 I' M+7 block[index+1] )
     ! increment index and get block[index]
-    [ 1 + 2dup swap nth ] 2dip
+    [ 1 + 2dup idx ] 2dip
     ! stack: block index+1 block[index+1] I M
     ! compute I' = (block[index+1] & 127) * 2^M + I
     pick 127 mask 2 pick ^ * '[ _ + ] dip
@@ -210,7 +210,7 @@ CONSTANT: static-table {
 
 : decode-integer ( block current-index prefix-length -- block new-index number )
     ! get the current octet, compute mask, apply mask
-    [ 2dup swap nth ] dip 2^ 1 - [ mask ] keep
+    [ 2dup idx ] dip 2^ 1 - [ mask ] keep
     over = 
     ! stack: block index I loop?
     [ 0
@@ -229,7 +229,7 @@ CONSTANT: static-table {
     ;
 
 : decode-string ( block current-index -- block new-index string )
-    [ 7 decode-integer ] [ swap nth 7 bit? ] 2bi
+    [ 7 decode-integer ] [ idx 7 bit? ] 2bi
     [ decode-huffman-string ] [ decode-raw-string ] if ; 
 
 : decode-literal-header ( decode-context block index index-length -- decode-context block new-index field )

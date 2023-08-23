@@ -141,7 +141,7 @@ TUPLE: face { halfspace array }
 : face-orientation ( face -- x ) pv> swap halfspace>> nth sgn ;
 : backface? ( face -- face ? )      dup face-orientation 0 <= ;
 : pv-factor ( face -- f face )     
-    halfspace>> [ pv> swap nth [ * ] curry ] keep ; inline
+    halfspace>> [ pv> idx [ * ] curry ] keep ; inline
 : suffix-touching-corner ( face corner -- face ) 
     [ suffix ] curry   change-touching-corners ; inline
 : real-face? ( face -- ? )
@@ -439,7 +439,7 @@ TUPLE: space name dimension solids ambient-color lights ;
    swap >>dimension    swap  >>solids ;
 
 : get-silhouette ( solid -- silhouette )    
-    silhouettes>> pv> swap nth ;
+    silhouettes>> pv> idx ;
 : solid= ( solid solid -- ? )            [ corners>> ]  same? ;
 
 : space-apply ( space m quot -- space ) 

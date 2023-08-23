@@ -18,7 +18,7 @@ IN: bubble-chamber
 
 : 1random ( b -- num ) 0 swap 2random ;
 
-: at-fraction ( seq fraction -- val ) over length 1 - * >integer swap nth ;
+: at-fraction ( seq fraction -- val ) over length 1 - * >integer idx ;
 
 : at-fraction-of ( fraction seq -- val ) swap at-fraction ;
 

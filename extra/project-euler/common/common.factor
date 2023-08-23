@@ -91,7 +91,7 @@ PRIVATE>
     dup 0 > [ 24 * 1 + sqrt 1 + 6 / 1 mod zero? ] [ drop f ] if ; inline
 
 : penultimate ( seq -- elt )
-    dup length 2 - swap nth ;
+    dup length 2 - idx ;
 
 <PRIVATE
 

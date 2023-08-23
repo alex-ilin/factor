@@ -74,6 +74,8 @@ are swapped compared to the original Factor implementation. I think my
 version makes the usage simpler, requiring less stack shuffling for typical
 usage, but the upstream developers decided they don't want to break
 compatibility by introducing this change;
+* add the `idx` word to the `sequences` vocab in `core`, make `nth-of` in
+`sequences.extras` an alias for it;
 * a patch for strings.tables suggested by @mrjbq7 in issue
 [1840](https://github.com/factor/factor/issues/1840) is applied, so now the
 table cells containing numeric data are right-aligned;

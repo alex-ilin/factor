@@ -213,7 +213,7 @@ M: object final-class? drop f ;
 
 : update-slot ( old-values n class initial -- value )
     pick [
-        [ [ swap nth dup ] dip instance? ] dip swap
+        [ [ idx dup ] dip instance? ] dip swap
         [ drop ] [ nip ] if
     ] [ 3nip ] if ;
 

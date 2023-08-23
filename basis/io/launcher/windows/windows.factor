@@ -182,7 +182,7 @@ M: windows (wait-for-processes)
     [ length ] keep 0 0
     WaitForMultipleObjects
     dup 0xffffffff = [ win32-error ] when
-    dup WAIT_TIMEOUT = [ 2drop t ] [ swap nth process-exited f ] if ;
+    dup WAIT_TIMEOUT = [ 2drop t ] [ idx process-exited f ] if ;
 
 : duplicate-handle ( handle -- handle' )
     GetCurrentProcess ! source process

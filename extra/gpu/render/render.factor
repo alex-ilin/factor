@@ -239,7 +239,7 @@ DEFER: uniform-texture-accessors
     ] [
         2dup swap empty? not and [
             <iota> [
-                [ swap nth ] swap prefix
+                [ idx ] swap prefix
                 over length 1 = [ swap first append ] [ swap suffix ] if
             ] with map
         ] [ drop ] if
@@ -450,7 +450,7 @@ DEFER: [bind-uniform-tuple]
     dim
     [
         <iota>
-        [ [ [ swap nth ] swap prefix ] map ]
+        [ [ [ idx ] swap prefix ] map ]
         [ [ number>string name "[" append "]." surround ] map ] bi
     ] [
         { [ ] }

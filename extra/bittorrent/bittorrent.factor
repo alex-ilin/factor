@@ -396,7 +396,7 @@ M: peer dispose
     read-handshake >>handshake ;
 
 : fast-peer? ( peer -- ? )
-    handshake>> reserved>> 7 swap nth 3 swap bit? ;
+    handshake>> reserved>> 7 idx 3 swap bit? ;
 
 : unchoke-peer ( peer -- peer )
     T{ unchoke } write-message f >>self-choking

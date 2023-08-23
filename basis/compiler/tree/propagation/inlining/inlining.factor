@@ -44,7 +44,7 @@ M: callable splicing-nodes splicing-body ;
     dup "methods" word-prop assoc-empty? [ 2drop f f ] [
         2dup [ in-d>> length ] [ dispatch# ] bi* <= [ 2drop f f ] [
             [ in-d>> <reversed> ] [ [ dispatch# ] keep ] bi*
-            [ swap nth value-info class>> dup ] dip
+            [ idx value-info class>> dup ] dip
             method-for-class
         ] if
     ] if ;

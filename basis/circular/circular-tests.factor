@@ -7,7 +7,7 @@ IN: circular.tests
 { 0 } [ { 0 1 2 3 4 } <circular> 0 swap virtual@ drop ] unit-test
 { 2 } [ { 0 1 2 3 4 } <circular> 2 swap virtual@ drop ] unit-test
 
-{ CHAR: t } [ "test" <circular> 0 swap nth ] unit-test
+{ CHAR: t } [ "test" <circular> 0 idx ] unit-test
 { "test"  } [ "test" <circular> >string ] unit-test
 
 { CHAR: e } [ "test" <circular> 5 swap nth-unsafe ] unit-test
@@ -28,7 +28,7 @@ IN: circular.tests
 { { 0 0 } } [ { 0 0 } <circular> -1 over change-circular-start >array ] unit-test
 
 ! This no longer fails
-! [ "test" <circular> 5 swap nth ] must-fail
+! [ "test" <circular> 5 idx ] must-fail
 ! [ "foo" <circular> CHAR: b 3 rot set-nth ] must-fail
 
 { { } } [ 3 <growing-circular> >array ] unit-test
