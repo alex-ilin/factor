@@ -1102,6 +1102,11 @@ HELP: one?
 { $values
     { "seq" sequence } { "quot" quotation }
     { "?" boolean }
+}
+{ $description "Returns " { $link t } " if exactly one of the elements in "
+{ $snippet "seq" } " matches the predicate in " { $snippet "quot" }
+". This is more efficient than " { $snippet "count 1 =" }
+": if there is more than one matching element, the result is returned as soon as the second one is found."
 } ;
 
 HELP: ordered-slices-overlap?
