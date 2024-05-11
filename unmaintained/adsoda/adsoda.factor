@@ -538,7 +538,7 @@ TUPLE: space name dimension solids ambient-color lights ;
     [ touching-corners>> 1 head ] 
     [ touching-corners>> 1 tail ] 
     [ face-reference [ theta ] 3curry ]         tri
-    { } map>assoc    sort-values keys 
+    map>alist sort-values keys
     append
     ; inline
 
